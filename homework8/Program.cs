@@ -1,26 +1,20 @@
 ﻿Console.WriteLine("Напишите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
-int x = n % 2;
-int y = 0;
+int number = Convert.ToInt32(Console.ReadLine());
+int x = number % 2;
+int count = 0;
 
-if (n > 0)
+while (count < number)
 {
-    if (x != 0)
-    {
-    x -= 1;
-    while (y < n - 1)
-    {
-        y += 2;
-        Console.Write($"{y} ");
-    }
-    }
-    else if (x == 0)
-    {
-        x += 2;
-         while (y < n - 1)
-    {
-        y += 2;
-        Console.Write($"{y} ");
-    }
-    }
+if (x == 0)
+{
+    count += 2;
+    Console.Write($"{count} ");
+}
+else if (x != 0)
+{
+    x += 1;
+    count += 2;
+    number -= 1;
+    Console.Write($"{count} ");
+}
 }
