@@ -1,13 +1,13 @@
 ﻿Console.WriteLine("Введите первое число: ");
-int firstnumber = Convert.ToInt32(Console.ReadLine());
+int FirstNumber = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
-int secondnumber = Convert.ToInt32(Console.ReadLine());
+int SecondNumber = Convert.ToInt32(Console.ReadLine());
 
-if (firstnumber > secondnumber)
+if (FirstNumber > SecondNumber)
 {
-    Console.WriteLine($"max = {firstnumber} ");
+    Console.WriteLine($"max = {FirstNumber} ");
 }
 else
 {
-    Console.WriteLine($"max = {secondnumber} ");
+    Console.WriteLine($"max = {SecondNumber} ");
 }
