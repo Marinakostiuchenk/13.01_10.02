@@ -2,24 +2,23 @@
 // обозначающую день недели, 
 // и проверяет, является ли этот день выходным.
 
-Console.WriteLine("Введите цифру, обозначающую день недели: ");
-int dayNumber = Convert.ToInt32(Console.ReadLine());
-
 int DayNumber(int num)
 {
-while (num > 7)
-{
-    if (num < 6) 
+    if (num < 6 && num > 0)
     {
-    Console.WriteLine("Не выходной");
-    break;
+        Console.WriteLine("Не выходной");
     }
-    else 
+    else if (num >= 6 && num <= 7)
     {
-    (num > 6) Console.WriteLine("Выходной");
+        Console.WriteLine("Выходной");
     }
-}
+    else
+    {
+        Console.WriteLine("Неправильное значение");
+    }
+return num;
 }
 
-int nameWeek = DayNummber(dayNumber);
-Console.WriteLine("Понедельник");
+Console.WriteLine("Введите цифру, обозначающую день недели: ");
+int dayNumber = Convert.ToInt32(Console.ReadLine());
+DayNumber(dayNumber);
