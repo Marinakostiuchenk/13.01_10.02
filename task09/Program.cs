@@ -27,5 +27,5 @@ int MaxDigit(int num) // num = number (это копия переменной)
     int firstDigit = num / 10; // 7
     int secondDigit = num % 10; // 8
     if (firstDigit > secondDigit) return firstDigit;
-    else return secondDigit;
+    return secondDigit;
 }
