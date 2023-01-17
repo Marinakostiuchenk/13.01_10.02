@@ -10,7 +10,7 @@ int ThirdNumber(int num)
     }
     else
     {
-        Console.WriteLine("Вы ввели неверное число!");
+        Console.WriteLine("третьей цифры нет");
     }
     return num;
 }

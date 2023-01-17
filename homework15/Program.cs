@@ -6,11 +6,11 @@ int DayNumber(int num)
 {
     if (num < 6 && num > 0)
     {
-        Console.WriteLine("Не выходной");
+        Console.WriteLine("Нет");
     }
     else if (num >= 6 && num <= 7)
     {
-        Console.WriteLine("Выходной");
+        Console.WriteLine("Да");
     }
     else
     {
