@@ -1,4 +1,7 @@
-﻿int secondDigit(int num)
+﻿// Задача 10: Напишите программу, которая принимает на вход трёхзначное число 
+// и на выходе показывает вторую цифру этого числа.
+
+int secondDigit(int num)
 {
     int firstNum = num % 100; // 56
     int secondNum = num % 10; // 6
