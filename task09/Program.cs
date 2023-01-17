@@ -16,11 +16,11 @@ Console.WriteLine($"Случайное число из отрезка 10 - 99 =>
 int maxDigit = MaxDigit(number);
 Console.WriteLine($"Наибольшая цифра числа => {maxDigit}");
 
-int maxDigit1 = MaxDigit(45);
-Console.WriteLine($"Наибольшая цифра числа => {maxDigit1}");
+// int maxDigit1 = MaxDigit(45);
+// Console.WriteLine($"Наибольшая цифра числа => {maxDigit1}");
 
-int maxDigit2 = MaxDigit(89);
-Console.WriteLine($"Наибольшая цифра числа => {maxDigit2}");
+// int maxDigit2 = MaxDigit(89);
+// Console.WriteLine($"Наибольшая цифра числа => {maxDigit2}");
 
 int MaxDigit(int num) // num = number (это копия переменной)
 {
