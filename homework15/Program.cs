@@ -9,7 +9,15 @@ int DayNumber(int num)
 {
 while (num > 7)
 {
-    if (num == 1) Console.WriteLine("Понедельник");
+    if (num < 6) 
+    {
+    Console.WriteLine("Не выходной");
+    break;
+    }
+    else 
+    {
+    (num > 6) Console.WriteLine("Выходной");
+    }
 }
 }
 

@@ -1,21 +1,20 @@
 ﻿// Задача 13: Напишите программу, которая выводит третью цифру заданного числа
 //  или сообщает, что третьей цифры нет.
 
+int ThirdNumber(int num)
+{
+    if (num > 100)
+    {
+        num = num % 10;
+        Console.WriteLine($"{num} ");
+    }
+    else
+    {
+        Console.WriteLine("Вы ввели неверное число!");
+    }
+    return num;
+}
+
 Console.WriteLine("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-int ThirdNumber(num)
-{
-    int thirdNumber = num % 10; // 645 => 5
-    return thirdNumber;
-}
-
-while (number > 100)
-{
-    int thirdNumber = ThirdNumber(number);
-    Console.WriteLine($"{thirdNumber} ");
-}
- else (num < 100);
- {
-    Console.WriteLine("третьей цифры нет");
- }
+int num1 = Convert.ToInt32(Console.ReadLine());
+ThirdNumber(num1);
