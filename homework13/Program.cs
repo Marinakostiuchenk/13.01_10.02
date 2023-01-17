@@ -7,11 +7,15 @@ int number = Convert.ToInt32(Console.ReadLine());
 int ThirdNumber(num)
 {
     int thirdNumber = num % 10; // 645 => 5
-    if (num > 100)
     return thirdNumber;
-    else (num < 100);
-    Console.WriteLine("третьей цифры нет");
 }
 
-int thirdNumber = ThirdNumber(number);
-Console.WriteLine($"{thirdNumber} ");
+while (number > 100)
+{
+    int thirdNumber = ThirdNumber(number);
+    Console.WriteLine($"{thirdNumber} ");
+}
+ else (num < 100);
+ {
+    Console.WriteLine("третьей цифры нет");
+ }
