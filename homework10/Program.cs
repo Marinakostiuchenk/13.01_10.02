@@ -3,16 +3,17 @@
 
 int SecondDigit(int num)
 {
-    if (num > 99 && num < 1000)
-    {
-    int num1 = num / 10 % 10;
-    Console.WriteLine($"{num1}");
-    }
-    else
-    Console.WriteLine("Неверное число");
-return num;
+    return num / 10 % 10;
 }
 
 Console.WriteLine("Введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-SecondDigit(number);
+
+while (number < 100 || number > 999)
+{
+    Console.WriteLine("Неверное число");
+    number = Convert.ToInt32(Console.ReadLine());
+}
+
+int res = SecondDigit(number);
+Console.WriteLine($"{res}");
