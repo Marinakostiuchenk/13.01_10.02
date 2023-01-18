@@ -3,14 +3,16 @@
 
 int SecondDigit(int num)
 {
-    int firstNum = num % 100; // 56
-    int secondNum = num % 10; // 6
-    int res = (firstNum - secondNum) / 10;
-    return res;
+    if (num > 99 && num < 1000)
+    {
+    int num1 = num / 10 % 10;
+    Console.WriteLine($"{num1}");
+    }
+    else
+    Console.WriteLine("Неверное число");
+return num;
 }
 
 Console.WriteLine("Введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-
-int res = SecondDigit(number);
-Console.WriteLine($"{res} ");
+SecondDigit(number);
