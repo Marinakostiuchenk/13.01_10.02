@@ -3,15 +3,28 @@
 
 int ThirdNumber(int num)
 {
-    return num = num % 10;
+    while (num > 999)
+    {
+        num = num / 10;
+    }
+    return num % 10;
 }
+
 
 Console.WriteLine("Введите число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-while (num1 > 99 || num1 < 100)
+if (num1 > 99 || num1 < -99)
 {
-    Console.WriteLine("Введите число: ");
+    if (num1 < -99)
+    {
+        num1 *= -1;
+    }
+int res = ThirdNumber(num1);
+Console.WriteLine($"{res} ");
 }
-
-ThirdNumber(num1);
+while (num1 < 100 && num1 > -100)
+{
+    Console.WriteLine("Третьей цифры нет");
+    break;
+}
