@@ -19,7 +19,7 @@ int z2 = Convert.ToInt32(Console.ReadLine());
 
 double Distance(int xc1, int yc1, int zc1, int xc2, int yc2, int zc2)
 {
-    return Math.Sqrt(Math.Pow((xc2 - xc1), 2) + Math.Pow((yc2 - yc1), 2) + + Math.Pow((zc1 - zc2), 2));
+    return Math.Sqrt(Math.Pow((xc2 - xc1), 2) + Math.Pow((yc2 - yc1), 2) + Math.Pow((zc1 - zc2), 2));
 }
 
 double distance = Distance(x1, y1, z1, x2, y2, z2);
