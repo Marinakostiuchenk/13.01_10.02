@@ -4,7 +4,7 @@
 
 Console.WriteLine("Введите число N: ");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number < 1) Console.WriteLine("Некорректный воод");
+if (number < 1) Console.WriteLine("Некорректный ввод");
 else Table(number);
 
 void Table(int num)
@@ -15,7 +15,6 @@ void Table(int num)
         Console.WriteLine($"{step,5}   {step * step,5}");
         step++;
     }
-
 }
 
 
