@@ -7,7 +7,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 if (number < 1) Console.WriteLine("Некорректный ввод");
 else Table(number);
 
-void Table(int num)
+void Table(int num) //чтобы сохранить данные - это работа с массивом
 {
     int step = 1;
     while (step <= num)
