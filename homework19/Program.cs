@@ -12,6 +12,10 @@ bool Digit(int num)
 
 Console.WriteLine("Напишите пятизначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
+if (number < 0)
+    {
+        number *= -1;
+    }
 
 while (number > 99999 || number < 10000)
 {
