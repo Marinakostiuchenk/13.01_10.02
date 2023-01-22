@@ -5,6 +5,23 @@
 // 12821 -> да 
 // 23432 -> да 
 
+bool Digit(int num)
+{
+    return num / 1000 / 10 == num % 100 % 10 && num / 1000 % 10 == num % 100 / 10;
+}   
+
 Console.WriteLine("Напишите пятизначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
+while (number > 99999)
+{
+    Console.WriteLine("Неверное число");
+    number = Convert.ToInt32(Console.ReadLine());
+}
+
+while (number < 100000 && number > 1000)
+{
+bool res = Digit(number);
+Console.WriteLine(res ? "да" : "нет");
+break;
+}
