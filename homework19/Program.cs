@@ -13,7 +13,7 @@ bool Digit(int num)
 Console.WriteLine("Напишите пятизначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-while (number > 99999)
+while (number > 99999 || number < 10000)
 {
     Console.WriteLine("Неверное число");
     number = Convert.ToInt32(Console.ReadLine());
