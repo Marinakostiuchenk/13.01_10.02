@@ -24,5 +24,5 @@ double Distance(int xc1, int yc1, int zc1, int xc2, int yc2, int zc2)
 
 double distance = Distance(x1, y1, z1, x2, y2, z2);
 double distanceRound = Math.Round(distance, 2, MidpointRounding.ToZero);
-Console.WriteLine($"Расстояние между точками {distanceRound}");
+Console.WriteLine($"A({x1}, {y1}, {z1}); B({x2}, {y2}, {z2}) -> {distanceRound}");
 
