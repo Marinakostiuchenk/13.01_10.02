@@ -9,6 +9,8 @@ int number = Convert.ToInt32(Console.ReadLine());
 int SumDigit(int num)
 {
     int count = 0;
+    if (num < 0) num = num * -1;
+
     while (num > 0)
     {
         num = num/10;
