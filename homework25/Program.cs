@@ -9,15 +9,26 @@ int firstNumber = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число B: ");
 int secondNumber = Convert.ToInt32(Console.ReadLine());
 
+// int Degree(int num1, int num2)
+// {
+//     int count = 1;
+//     while (count != num1)
+//     {
+//        num2 *= num2;
+//        count++;
+//     }
+//     return num1;
+// }
+
 int Degree(int num1, int num2)
 {
     int count = 1;
-    while (count != num1)
+    for (int i = 1; i != num2; i++)
     {
-       num2 *= num2;
-       count++;
+       num1 *= num1;
+       count = i; 
     }
-    return num1;
+    return count;
 }
 
 int degree = Degree(firstNumber, secondNumber);
