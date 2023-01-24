@@ -18,19 +18,22 @@ int[] CreateArray(int size)
 
 void FillArray(int[] arr)
 {
-    for (int i = 0; i < 8; i++)
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(0, 2);
+        arr[i] = rnd.Next(0, 2);
     }
 }
 string ArrayToString(int[] array)
 {
-    return Console.WriteLine(string.Join(",", array));
+    return string.Join(",", array);
 }
-void PrintArray(int[] array);
+void PrintArray(int[] array)
 {
         Console.Write(ArrayToString(array));
 }
+
+Console.WriteLine("введите размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] array = CreateArray(size);
 FillArray(array);
