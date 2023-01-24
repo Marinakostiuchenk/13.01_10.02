@@ -10,34 +10,41 @@
 // Задача 30: Напишите программу, которая выводит массив из 8 элементов, 
 // заполненный нулями и единицами в случайном порядке. [1,0,1,1,0,1,0,0]
 
+int[] CreateArray(int size)
+{
+    int[] array = new int[size];
+    return array;
+}
 
-int[] array = new int[8];
-int[] FillArray(int[] arr)
+void FillArray(int[] arr)
 {
     for (int i = 0; i < 8; i++)
     {
         arr[i] = new Random().Next(0, 2);
     }
-    return arr;
 }
-void PrintArray(int[] arr);
+string ArrayToString(int[] array)
 {
-    for (int i = 0; i < 8; i++)
-    {
-        Console.Write($"{arr[i]}, ");
-    }
+    return Console.WriteLine(string.Join(",", array));
 }
-array = FillArray(array);
+void PrintArray(int[] array);
+{
+        Console.Write(ArrayToString(array));
+}
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = CreateArray(size);
+FillArray(array);
 PrintArray(array);
 
 
 // int[] GenArray(int size, int min, int max) //создание массива в методе
 // {
 //     int[] arr = new int[size];
-//     // Random rnd = new Random(); //дальше не нью рандом, а rnd.Next(min, max + 1)
+//     Random rnd = new Random(); //дальше не нью рандом, а rnd.Next(min, max + 1)
 //     for (int i = 0; i < arr.Length; i++)
 //     {
-//         arr[i] = new Random().Next(min, max + 1); //new Random генерирует ПСЕВДО рандом: 11111
+//         arr[i] = rnd.Next(min, max + 1);
+//         // arr[i] = new Random().Next(min, max + 1); //new Random генерирует ПСЕВДО рандом: 11111
 //     }
 //     return arr;
 // }
@@ -51,6 +58,9 @@ PrintArray(array);
 // }
 // int [] array = GenArray(8, 0, 1);
 // PrintArray(array);
+
+
+
 
 
 
