@@ -5,9 +5,12 @@
 Console.WriteLine("Введите целое положительное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number < 1) Console.WriteLine("Некорректное число");
-int sumNumbers = SumNumbers(number);
-Console.WriteLine($"Сумма чисел от 1 до {number} = {sumNumbers}");
+if (number > 0) 
+{
+    int sumNumbers = SumNumbers(number);
+    Console.WriteLine($"Сумма чисел от 1 до {number} = {sumNumbers}");
+}
+else Console.WriteLine("Некорректное число");
 
 int SumNumbers(int num)
 {
