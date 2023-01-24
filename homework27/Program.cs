@@ -8,17 +8,15 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int SumDigit(int num)
 {
-    int count = 0;
+    int sum = 0;
     if (num < 0) num = num * -1;
-
-  for (int i = 0; i < length; i++)
+    while (num > 0)
   {
-      num = num / 10;
-      i++;
-      }
-      return count;
+    sum += num % 10;
+    num = num / 10;
   }
-
+  return sum;
+  }
 
 int sumDigit = SumDigit(number);
 Console.WriteLine(sumDigit);
