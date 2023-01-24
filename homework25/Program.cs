@@ -12,23 +12,24 @@ int secondNumber = Convert.ToInt32(Console.ReadLine());
 // int Degree(int num1, int num2)
 // {
 //     int count = 1;
-//     while (count != num1)
+//     while (count != num2)
 //     {
-//        num2 *= num2;
+//        num1 *= num1;
 //        count++;
 //     }
 //     return num1;
+//     return num2;
 // }
 
 int Degree(int num1, int num2)
 {
     int count = 1;
-    for (int i = 1; i != num2; i++)
+    while (count < num2 + 1)
     {
        num1 *= num1;
-       count = i; 
+       count++;
     }
-    return count;
+    return num1;
 }
 
 int degree = Degree(firstNumber, secondNumber);
