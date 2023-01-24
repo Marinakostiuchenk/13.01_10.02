@@ -9,10 +9,27 @@ int firstNumber = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число B: ");
 int secondNumber = Convert.ToInt32(Console.ReadLine());
 
-if (secondNumber > 0) 
+int Degree(int num1, int num2)
 {
-    double degree = Math.Pow(firstNumber, secondNumber);
-    Console.Write(degree);
-    Console.WriteLine(); //для красоты
+    int count = 1;
+    while (count != num1)
+    {
+       num2 *= num2;
+       count++;
+    }
+    return num1;
 }
-Console.WriteLine("Вы ввели неверное число В");
+
+int degree = Degree(firstNumber, secondNumber);
+Console.WriteLine(degree);
+
+
+// if (secondNumber > 0) 
+// {
+//     double degree = Math.Pow(firstNumber, secondNumber);
+//     Console.Write(degree);
+//     Console.WriteLine(); //для красоты
+// }
+// Console.WriteLine("Вы ввели неверное число В");
+
+
