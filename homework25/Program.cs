@@ -4,10 +4,10 @@
 //  2, 4 -> 16
 
 Console.Write("Введите число А: ");
-int firstNumber = Convert.ToInt32(Console.ReadLine());
+int number1 = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Введите число B: ");
-int secondNumber = Convert.ToInt32(Console.ReadLine());
+int number2 = Convert.ToInt32(Console.ReadLine());
 
 // int Degree(int num1, int num2)
 // {
@@ -23,16 +23,30 @@ int secondNumber = Convert.ToInt32(Console.ReadLine());
 
 int Degree(int num1, int num2)
 {
-    int count = 1;
-    while (count < num2 + 1)
+    int degree = num1;
+    for (int i = 2; i < num2 + 1; i++)
     {
-       num1 *= num1;
-       count++;
+       degree *= num1; 
     }
-    return num1;
+    return degree; 
 }
+// {
+//     int count = 2;
 
-int degree = Degree(firstNumber, secondNumber);
+//     while (count < 6)
+//     {
+       
+//        num1 *= num1;
+//        count++;
+//     }
+//     return num1;
+// }
+while (number2 < 1)
+{
+    Console.WriteLine("Ввод неверный. Введите натуральное второе число: ");
+    number2 = Convert.ToInt32(Console.ReadLine());
+}
+int degree = Degree(number1, number2);
 Console.WriteLine(degree);
 
 
