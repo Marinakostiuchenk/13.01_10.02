@@ -21,5 +21,9 @@ void PrintArray(int[] arr)
         Console.Write($"{arr[i]} " );
     }
 }
-int [] array = GenArray(8, 0, 100);
+Console.WriteLine("Здайте массив из 8 элементов. Введите максимальное число: ");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное число: ");
+int min = Convert.ToInt32(Console.ReadLine());
+int [] array = GenArray(8, min, max); //можно без ввода - сразу цифры подставить здесь, убрав 4 строки выше
 PrintArray(array);
