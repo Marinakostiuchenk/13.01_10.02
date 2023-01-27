@@ -48,13 +48,35 @@ int GetSumPositiveElem(int[] array) // сумма отрицательных и�
     return sum;
 }
 
+int[] GetSumPositiveNegativeElem(int[] array)// через кортеж можно использовать имена и по именам обращаться удобнее, а можно массив
+{
+    int sumNegative = 0;
+    int sumPositive = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        // if (array != 0) {if...; else...}
+        if (array[i] > 0) sumPositive += array[i];
+        if (array[i] < 0) sumNegative += array[i];
+    }
+    return new int[]{sumPositive, sumNegative};
+}
+
+
 int[] arr = CreateArrayRndInt(12, -9, 9);
 PrintArray(arr);
 
 int sumNegativeElem = GetSumNegativeElem(arr);
 int sumPositiveElem = GetSumPositiveElem(arr);
+
 Console.WriteLine($"Сумма положительных элементов = {sumPositiveElem}");
 Console.WriteLine($"Сумма отрицательных элементов = {sumNegativeElem}");
+
+Console.WriteLine();
+
+int[] getSumPositiveNegativeElem = GetSumPositiveNegativeElem(arr);
+Console.WriteLine($"Сумма положительных элементов = {getSumPositiveNegativeElem[0]}");
+Console.WriteLine($"Сумма отрицательных элементов = {getSumPositiveNegativeElem[1]}");
+
 // Console.Write(" -> ["); // но метод для того, чтобы не повторять код
 // PrintArray(arr);
 // Console.Write(" -> ]");
