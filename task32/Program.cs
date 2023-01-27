@@ -12,22 +12,33 @@ int[] CreateArrayRndInt(int size, int min, int max)
     {
         array[i] = rnd.Next(min, max + 1); //заполнили методом из чисел, которые будут заданы
     }
+    return array;
 }
 
 //функция вывода
-void PrintArray(int[] array)
+// void PrintArray(int[] array)
+// {
+//     Console.Write("[");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (i < array.Length - 1) Console.Write($"{array[i]}, ");
+//         else Console.Write($"{array[i]}");
+//     }
+//     Console.WriteLine("]");
+// }
+void PrintArray(int[] arr)
 {
     Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
-        else Console.Write($"{array[i]}");
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
     }
-    Console.WriteLine("]");
+    Console.Write("] ");
 }
 
-
-void Reverse (int[] array)
+// метод для изменения знака числа
+int[] Reverse (int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -35,8 +46,10 @@ void Reverse (int[] array)
     }
     return array;
 }
+
 //Программа
 int[] array = CreateArrayRndInt(4, -10, 10);
 PrintArray(array);
+Console.Write("-> ");
 int[] reverseArray = Reverse(array);
 PrintArray(reverseArray);

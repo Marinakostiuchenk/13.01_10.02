@@ -22,16 +22,16 @@ void PrintArray(int[] arr)
     }
 }
 
-bool NumberInArray(int[] array, int num)
+string NumberInArray(int[] array, int num)
 {
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] == num) 
         {
-            return true;
+            return "да";
         }
     }
-    return false;
+    return "нет";
 }
 
 Console.WriteLine("Введите число: ");
@@ -39,5 +39,6 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int[] array = GenArray(5, 0, 10);
 PrintArray(array);
-bool numberInArray = NumberInArray(array, number);
-Console.WriteLine(numberInArray);
+
+string numberInArray = NumberInArray(array, number);
+Console.WriteLine($" -> {numberInArray}");
