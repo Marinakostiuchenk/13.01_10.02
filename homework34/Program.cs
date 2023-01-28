@@ -31,7 +31,7 @@ for (int i = 0; i < array.Length; i++)
 {
     if (array[i] % 2 == 0) 
     {
-        num = num + i;
+        num++;
     }
 }
 return num;
@@ -39,6 +39,5 @@ return num;
 
 int[] array = FillArray(8, 100, 999);
 PrintArray(array); 
-
 int res = Even(array);
 Console.Write(res);
