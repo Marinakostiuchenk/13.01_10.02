@@ -35,7 +35,7 @@ int Odd(int[] array)
     return num;
 }
 
-int[] array = FillArray(8, 1, 9);
+int[] array = FillArray(10, 1, 10);
 PrintArray(array); 
 
 int res = Odd(array);

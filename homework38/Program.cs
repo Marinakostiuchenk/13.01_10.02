@@ -2,18 +2,18 @@
 // Найдите разницу между максимальным и минимальным элементом массива.
 // [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
-double[] FillArray(int size, int min, int max) 
+double[] FillArrayDouble(int size, int min, int max) 
 {
     double[] arr = new double[size];
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = rnd.Next(min, max);
+        arr[i] = Math.Round(rnd.NextDouble() * ((max - min) + min), 1);
     }
     return arr;
 }
 
-void PrintArray(double[] arr)
+void PrintArrayDouble(double[] arr)
 {
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
@@ -26,18 +26,21 @@ void PrintArray(double[] arr)
 
 double DiffMaxMin(double[] array)
 {
-    double max = 0;
-    double min = 0;
-    double diff = 0;
-    for (int i = 0; i < array.Length; i++)
+    double maxDigit = array[0];
+    double minDigit = array[0];
+    for (int i = 1; i < array.Length; i++)
     {
-         (i % 2 == 0) num += i;
+        if (array[i] > maxDigit) maxDigit = array[i];
+        if (array[i] < minDigit) minDigit = array[i];
     }
-    return num;
+    double difference =  maxDigit - minDigit;
+    return difference;
 }
 
-double[] array = FillArray(5, 0, 100);
-PrintArray(array);
+double[] array = FillArrayDouble(5, 0, 100);
+PrintArrayDouble(array);
+
 Console.Write("-> ");
-double[] diffMaxMin = DiffMaxMin(array);
-PrintArray(diffMaxMin);
+
+double diffMaxMin = Math.Round(DiffMaxMin(array), 1);
+Console.WriteLine($"{diffMaxMin}");
