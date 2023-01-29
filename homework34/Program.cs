@@ -40,4 +40,4 @@ return num;
 int[] array = FillArray(8, 100, 999);
 PrintArray(array); 
 int res = Even(array);
-Console.Write(res);
+Console.Write($" -> {res} ");

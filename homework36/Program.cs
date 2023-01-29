@@ -30,13 +30,13 @@ int Odd(int[] array)
     int num = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (i % 2 == 0) num += i;
+        if (i % 2 != 0) num += array[i];
     }
     return num;
 }
 
-int[] array = FillArray(8, 100, 999);
+int[] array = FillArray(8, 1, 9);
 PrintArray(array); 
 
 int res = Odd(array);
-Console.Write(res);
+Console.Write($" -> {res} ");
