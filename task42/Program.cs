@@ -27,13 +27,13 @@ int number = Convert.ToInt32(Console.ReadLine());
 // string res  = Recursia(number);
 // Console.WriteLine(res);
 
-
+//ЧЕРЕЗ СТРОКУ:
 string InverseNumber(int num)
 {
     string res = string.Empty;
     while (num > 0)
     {
-        res = num % 2 + res;
+        res = num % 2 + res; // сначала остаток от деления, потом результат
         num /= 2;
         
     }
@@ -41,3 +41,20 @@ string InverseNumber(int num)
 }
 string inverseNumber = InverseNumber(number);
 Console.WriteLine(inverseNumber);
+
+
+//ЧЕРЕЗ ЧИСЛО:
+// int BinaryNumber(int num)
+// {
+//     int res = 0;
+//     int count = 1;
+//     while (num > 0)
+//     {
+//         res += num % 2 * count;
+//         num /= 2;
+//         count *= 10;
+//     }
+//     return res;
+// }
+// int binaryNumber = BinaryNumber(number);
+// Cpnsole.WriteLine(binaryNumber);
