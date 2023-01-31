@@ -35,4 +35,5 @@ int[] CopyArray(int[] arr)
 
 int[] array = FillArray(5, 1, 9);
 int[] copy = CopyArray(array);
+// copy[0] = 15; проверка для того, что копия - это отдельный массив
 Console.WriteLine($"{PrintArray(array)} -> {PrintArray(copy)}");
