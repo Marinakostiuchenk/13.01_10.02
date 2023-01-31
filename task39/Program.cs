@@ -26,13 +26,13 @@ void PrintArray(int[] arr)
 }
 
 // можно только метод готовый: Array.Reverse(arr) - ниже в 2 строки
-void ReverseArray(int[] array)
+void ReverseArray(int[] array) //это ссылка на значения, которые уже есть (который создали массив)
 {
     for (int i = 0; i < array.Length / 2; i++)
     {
-        int temp = array[i]; //1
-        array[i] = array[array.Length - 1 - i];
-        array[array.Length - 1 - i] = temp;
+        int temp = array[i]; //1 с временной переменной
+        array[i] = array[array.Length - 1 - i]; //5 с нулевым индексом теперь
+        array[array.Length - 1 - i] = temp; //5 = 1 теперь с последним индексом
 
     }
 }

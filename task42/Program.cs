@@ -28,33 +28,33 @@ int number = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine(res);
 
 //ЧЕРЕЗ СТРОКУ:
-string InverseNumber(int num)
-{
-    string res = string.Empty;
-    while (num > 0)
-    {
-        res = num % 2 + res; // сначала остаток от деления, потом результат
-        num /= 2;
+// string InverseNumber(int num)
+// {
+//     string res = string.Empty;
+//     while (num > 0)
+//     {
+//         res = num % 2 + res; // сначала остаток от деления, потом результат в строку добавляем
+//         num /= 2;
         
-    }
-    return res;
-}
-string inverseNumber = InverseNumber(number);
-Console.WriteLine(inverseNumber);
+//     }
+//     return res; //возвращаем строку
+// }
+// string inverseNumber = InverseNumber(number);
+// Console.WriteLine(inverseNumber);
 
 
 //ЧЕРЕЗ ЧИСЛО:
-// int BinaryNumber(int num)
-// {
-//     int res = 0;
-//     int count = 1;
-//     while (num > 0)
-//     {
-//         res += num % 2 * count;
-//         num /= 2;
-//         count *= 10;
-//     }
-//     return res;
-// }
-// int binaryNumber = BinaryNumber(number);
-// Console.WriteLine(binaryNumber);
+int BinaryNumber(int num)
+{
+    int res = 0;
+    int count = 1;
+    while (num > 0)
+    {
+        res += num % 2 * count;
+        num /= 2; //для следующих вычислений
+        count *= 10;
+    }
+    return res; //число 101 101, а не строка
+}
+int binaryNumber = BinaryNumber(number);
+Console.WriteLine(binaryNumber);
