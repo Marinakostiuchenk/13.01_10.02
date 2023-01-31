@@ -57,4 +57,4 @@ Console.WriteLine(inverseNumber);
 //     return res;
 // }
 // int binaryNumber = BinaryNumber(number);
-// Cpnsole.WriteLine(binaryNumber);
+// Console.WriteLine(binaryNumber);
