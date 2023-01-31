@@ -30,7 +30,7 @@ int ReturnNumberElements(int[] array, int min, int max)
     int numberElem = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] >= min && array[i] <= max);
+        if (array[i] >= min && array[i] <= max)
         {
             numberElem++;
         }

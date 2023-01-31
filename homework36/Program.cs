@@ -9,7 +9,7 @@ int[] FillArray(int size, int min, int max)
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = rnd.Next(min, max);
+        arr[i] = rnd.Next(min, max + 1);
     }
     return arr;
 }

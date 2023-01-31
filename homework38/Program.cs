@@ -8,7 +8,7 @@ double[] FillArrayDouble(int size, int min, int max)
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = Math.Round(rnd.NextDouble() * ((max - min) + min), 1);
+        arr[i] = Math.Round(rnd.NextDouble() * ((max - min) + min), 2);
     }
     return arr;
 }
