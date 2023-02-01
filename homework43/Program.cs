@@ -22,7 +22,7 @@ Console.Write($"({intersectionPointForX};");
 double intersectionPointForY = Math.Round(IntersectionPointForY(b1, k1, intersectionPointForX), 1);
 Console.WriteLine($" {intersectionPointForY})");
 
-double IntersectionPointForX (int b1c, int k1c, int b2c, double k2c)
+double IntersectionPointForX (int b1c, int k1c, int b2c, double k2c) //почему без 1го параметра double не получается все формула? Как это число конвертируется?
 {
     return (b2c - b1c) / (k1c - k2c);
 }
