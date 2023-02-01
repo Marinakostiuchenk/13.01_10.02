@@ -16,18 +16,18 @@ Console.WriteLine("Введите b2: ");
 int b2 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите k2: ");
 int k2 = Convert.ToInt32(Console.ReadLine());
-
+Console.Write($"b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> ");
 double intersectionPointForX = Math.Round(IntersectionPointForX(b1, k1, b2, k2), 1);
-Console.Write($"({intersectionPointForX});");
-double intersectionPointForY = Math.Round(IntersectionPointForY(b1, k1, b2, k2), 1);
-Console.WriteLine($" ({intersectionPointForY})");
+Console.Write($"({intersectionPointForX};");
+double intersectionPointForY = Math.Round(IntersectionPointForY(b1, k1, intersectionPointForX), 1);
+Console.WriteLine($" {intersectionPointForY})");
 
-double IntersectionPointForX (int b1c, int k1c, int b2c, int k2c)
+double IntersectionPointForX (int b1c, int k1c, int b2c, double k2c)
 {
-    return Convert.ToDouble(b2c - b1c) / (k1c - k2c);
+    return (b2c - b1c) / (k1c - k2c);
 }
 
-double IntersectionPointForY (int b1c, int k1c, int b2c, int k2c)
+double IntersectionPointForY (int b1c, int k1c, double x)
 {
-    return Convert.ToDouble(k1c * ((b2c - b1c)) / (k1c - k2c)) + b1c;
+   return  k1c * x + b1c;
 }
