@@ -5,19 +5,41 @@
 
 Console.WriteLine("Введите количество чисел для ввода далее: ");
 int size = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите числа: ");
-string numbers = Convert.ToString(Console.ReadLine());
 
-int[] CreateArray(int size, ) 
-{
-    int[] arr = new int[size];
-    Random rnd = new Random();
-    for (int i = 0; i < arr.Length; i++)
+int[] CreateArray(int size) 
     {
-        arr[i] = rnd.Next(min, max);
-    }
-    return arr;
+    int[] arr = new int[size];
+for (int i = 0; i < size; i++)
+{
+    int count = 0;
+    Console.WriteLine("Введите числа: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    arr[i] = num;
 }
+return arr;
+}
+
+
+// int Integer(numbers)
+// if (num > 0)
+    
+//     {
+//         count++;
+//     }
+
+
+
+
+// int[] CreateArray(int size, string go) 
+// {
+//     int[] arr = new int[size];
+    
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         arr[i] = rnd.Next(min, max);
+//     }
+//     return arr;
+// }
 
 void PrintArray(int[] arr)
 {
@@ -27,19 +49,19 @@ void PrintArray(int[] arr)
     }
 }
 
-int Integers(int[] arr)
-{
-    int count = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        while (arr[i] > 0)
-        count++;
-    }
-    return count;
-}
+// int Integers(int[] arr)
+// {
+//     int count = 0;
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         while (arr[i] > 0)
+//         count++;
+//     }
+//     return count;
+// }
 
-int[] array = CreateArray(size, min, max);
+int[] array = CreateArray(size);
 PrintArray(array);
-int integers = Integers(array);
-Console.WriteLine(integers);
+// int integers = Integers(array);
+// Console.WriteLine(integers);
 
