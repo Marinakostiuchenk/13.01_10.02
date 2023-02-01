@@ -16,18 +16,20 @@ int ThirdNumber(int num)
 
 Console.WriteLine("Введите число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
-
-if (num1 > 99 || num1 < -99)
-{
-    if (num1 < -99)
-    {
-        num1 *= -1;
-    }
 int res = ThirdNumber(num1);
-Console.WriteLine($"{res} ");
-}
-while (num1 < 100 && num1 > -100)
-{
-    Console.WriteLine("Третьей цифры нет");
-    break;
-}
+Console.Write(res);
+
+// if (num1 > 99 || num1 < -99)
+// {
+//     if (num1 < -99)
+//     {
+//         num1 *= -1;
+//     }
+// int res = ThirdNumber(num1);
+// Console.WriteLine($"{res} ");
+// }
+// while (num1 < 100 && num1 > -100)
+// {
+//     Console.WriteLine("Третьей цифры нет");
+//     break;
+// }

@@ -58,3 +58,7 @@ int BinaryNumber(int num)
 }
 int binaryNumber = BinaryNumber(number);
 Console.WriteLine(binaryNumber);
+
+// 5:2 = 1
+// 2 : 2 = 0
+// 
