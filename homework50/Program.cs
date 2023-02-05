@@ -20,7 +20,10 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-
+bool IndexNumber(int[,] matrix, int indexI, int indexJ)
+{
+    return indexI < matrix.GetLength(0) || indexJ < matrix.GetLength(1);
+}
 
 void PrintMatrix(int[,] matrix)
 {
@@ -35,12 +38,11 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-Console.Write("Введите индекс элемента в массиве: ");
+Console.WriteLine("Введите индекс элемента в двумерном массиве: ");
 int i = Convert.ToInt32(Console.ReadLine());
-Console.Write(", ");
 int j = Convert.ToInt32(Console.ReadLine());
 
 int[,] matr = CreateMatrixRndInt(3, 4, 0, 100);
 PrintMatrix(matr);
-Square(matr);
-PrintMatrix(matr);
+bool indexNumber = IndexNumber(matr, i, j);
+Console.WriteLine(indexNumber ? $"{matr[i, j]}" : $"{i}, {j} -> Такого элемента в массиве нет");
