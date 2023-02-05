@@ -42,7 +42,14 @@ Console.WriteLine("Введите индекс элемента в двумер�
 int i = Convert.ToInt32(Console.ReadLine());
 int j = Convert.ToInt32(Console.ReadLine());
 
+if (i > 0 && j > 0)
+{
 int[,] matr = CreateMatrixRndInt(3, 4, 0, 100);
 PrintMatrix(matr);
 bool indexNumber = IndexNumber(matr, i, j);
 Console.WriteLine(indexNumber ? $"{matr[i, j]}" : $"{i}, {j} -> Такого элемента в массиве нет");
+}
+else 
+{
+    Console.WriteLine("Неверное число. Индекс содержит числа больше или равно 0.");
+}
