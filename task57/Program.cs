@@ -75,4 +75,5 @@ int[,] matr = CreateMatrixRndInt(4, 4, 0, 100);
 PrintMatrix(matr);
 Console.WriteLine();
 int[] arr = ArrayFromMatrix(matr);
+// Array.Sort(arr);
 PrintArray(arr);
