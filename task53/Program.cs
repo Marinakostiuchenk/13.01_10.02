@@ -15,12 +15,11 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-int[,] Rows(int[,] matrix)
+int[,] ReplaceRows(int[,] matrix)
 {
-    int tmp = 0;
     for (int j = 0; j < matrix.GetLength(0); j++)
     {
-        tmp = matrix[0, j];
+       int tmp = matrix[0, j];
         matrix[0, j] = matrix[matrix.GetLength(0) - 1, j];
        matrix[matrix.GetLength(0) - 1, j] = tmp; 
     }
@@ -43,5 +42,5 @@ void PrintMatrix(int[,] matrix)
 int[,] matr = CreateMatrixRndInt(4, 4, 0, 100);
 PrintMatrix(matr);
 Console.WriteLine();
-Rows(matr);
+ReplaceRows(matr);
 PrintMatrix(matr);
