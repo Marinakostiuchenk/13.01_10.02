@@ -26,7 +26,7 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 
 void Square(int[,] matrix)
 {
-    int square = 0;
+    
     for (int i = 0; i < matrix.GetLength(0); i+=2)
     {
         for (int j = 0; j < matrix.GetLength(1); j+=2)
@@ -42,8 +42,8 @@ void PrintMatrix(int[,] matrix)
     {
         Console.Write("|"); for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3} | ");
-            else Console.Write($"{matrix[i, j],3} ");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5} | ");
+            else Console.Write($"{matrix[i, j],5} ");
         }
         Console.WriteLine("|");
     }
@@ -51,5 +51,6 @@ void PrintMatrix(int[,] matrix)
 
 int[,] matr = CreateMatrixRndInt(3, 4, 0, 100);
 PrintMatrix(matr);
+Console.WriteLine();
 Square(matr);
 PrintMatrix(matr);

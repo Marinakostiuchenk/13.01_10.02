@@ -15,20 +15,6 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     }
     return matrix;
 }
-// первое решение:
-// int[,] ReplaceRowsColumns(int[,] matrix)
-// {
-//     int[,] copyMatrix = new int[matrix.GetLength(0), CopyMatrix.GetLength(1)];
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//           copyMatrix[i, j] = matrix[j, i];  
-//         }
-        
-//     }
-//     return copyMatrix;
-// }
 
 void PrintMatrix(int[,] matrix)
 {
@@ -43,32 +29,54 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-//тело программы
-int[,] matr = CreateMatrixRndInt(4, 5, 0, 100);
+int[,] matr = CreateMatrixRndInt(5, 6, 0, 100);
 PrintMatrix(matr);
+Console.WriteLine();
+
 if (matr.GetLength(0) != matr.GetLength(1))
 {
     Console.WriteLine("Невозможно заменить строки на столбцы");
 }
 else
 {
-// int[,] copyMatr = CopyMatrix(matr);
-// PrintMatrix(copyMatr);
-!!!!!!!!!!!!!!!!!Console.WriteLine($"{ReplaceRowsColumns(matr)}");
+int[,] copyMatrix = CopyMatrix(matr);
+PrintMatrix(copyMatrix);
 }
 
-//Второй способ решения:
-void ReplaceRowsColumns(int[,] matrix)
+
+
+
+// первое решение:
+int[,] CopyMatrix(int[,] matrix)
 {
-    for (int i = 0; i < matr.GetLength(0) - 1; i++)
+    int[,] copyMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = i + 1; j < matr.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            int temp = matrix[i, j];
-            matrix[i, j] = matrix[j, i];
-            matrix[j, i] = temp;
+            int tmp = matrix[i, j];
+            copyMatrix[i, j] = matrix[j, i];  
+            matrix[j, i] = tmp;
         }
+        
     }
+    return copyMatrix;
 }
+
+// //Второй способ решения:
+// void ReplaceRowsColumns(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0) - 1; i++)
+//     {
+//         for (int j = i + 1; j < matrix.GetLength(1); j++)
+//         {
+//             int temp = matrix[i, j];
+//             matrix[i, j] = matrix[j, i];
+//             matrix[j, i] = temp;
+//         }
+//     }
+// }
+
+
 
 // Array.Sort(array); - сортировка от меньшего к большему

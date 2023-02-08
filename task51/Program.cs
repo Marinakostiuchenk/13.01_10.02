@@ -35,22 +35,16 @@ int DiagonalSumNumbers(int[,] matrix)
 {
     int sum = default;
     int size = matrix.GetLength(0);
-    if (matrix.GetLength(1)>matrix.GetLength(0))
+    if (matrix.GetLength(0) > matrix.GetLength(1)) size = matrix.GetLength(1);
     {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < size; i++)
     {
         sum += matrix[i, i];
     }
-}
-else
-{
-        for (int i = 0; i < PrintMatrix.GetLength(1); i++)
-        {
-            sum += matrix[i, i];
-        }
-}
+    }
     return sum;
 }
+
 
 
 int[,] matr = CreateMatrixRndInt(5, 6, 0, 100);
