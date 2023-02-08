@@ -29,38 +29,36 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
+// тело функции:
 int[,] matr = CreateMatrixRndInt(5, 6, 0, 100);
 PrintMatrix(matr);
 Console.WriteLine();
 
-if (matr.GetLength(0) != matr.GetLength(1))
+if (matr.GetLength(0) == matr.GetLength(1)) 
 {
-    Console.WriteLine("Невозможно заменить строки на столбцы");
+    int[,] replaceMatrix = ReplaceMatrix(matr);
+    PrintMatrix(replaceMatrix);
 }
 else
-{
-int[,] copyMatrix = CopyMatrix(matr);
-PrintMatrix(copyMatrix);
-}
-
+Console.WriteLine("Невозможно заменить строки на столбцы");
 
 
 
 // первое решение:
-int[,] CopyMatrix(int[,] matrix)
+int[,] ReplaceMatrix(int[,] matrix)
 {
-    int[,] copyMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
+    int[,] replaceMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             int tmp = matrix[i, j];
-            copyMatrix[i, j] = matrix[j, i];  
+            replaceMatrix[i, j] = matrix[j, i];  
             matrix[j, i] = tmp;
         }
         
     }
-    return copyMatrix;
+    return replaceMatrix;
 }
 
 // //Второй способ решения:
