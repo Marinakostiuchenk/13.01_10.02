@@ -6,49 +6,67 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-double[,] CreateMatrixRndInt(int rows, int columns)
+double[,] GenerateMatrix(int rows, int columns, int min, int max)
 {
-    double[,] matrix = new double[rows, columns]; // 0, 1 
+    double[,] matrix = new double[rows, columns];
     Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rnd.Next(0, 10);
+            matrix[i, j] = rnd.Next(min, max + 1);
         }
     }
     return matrix;
 }
 
-void PrintMatrix(double[,] matrix)
+string PrintMatrix(double[,] matrix)
 {
-for (int i = 0; i < matrix.GetLength(0); i++)
-{
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    string str = string.Empty;
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        Console.Write(string.Format("{0,5}", matrix[i, j] + " "));
+        str += "[";
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (j == matrix.GetLength(1) - 1) str += $" {matrix[i, j],3} ";
+            else str += $" {matrix[i, j],3}, ";
+        }
+        str += "]\n";
     }
-    Console.WriteLine();
-}
+    return str;
+
 }
 
-void Average(double[,] matrix)
+string PrintArray(double[] arr)
 {
-    double average = 0;
+    string str = "[";
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (str == "[") str += arr[i];
+        else str += $", {arr[i]}";
+    }
+    str += "]";
+    return str;
 
+}
+
+double[] GetArithmeticMeanRows(double[,] matrix)
+{
+    double[] arrayArithmeticMeanRows = new double[matrix.GetLength(1)];
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-
+        double sum = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            average += matrix[i, j] / matrix.GetLength(0);
+            sum += matrix[i, j];
         }
-        Console.WriteLine(string.Format ("Средняя арифметическая в столбце {0} = {1}", j, Math.Round(average, 1)));
-        average = 0;
+        arrayArithmeticMeanRows[j] = Math.Round(sum / matrix.GetLength(0), 2);
     }
+    return arrayArithmeticMeanRows;
 }
 
+double[,] matrixNumbers = GenerateMatrix(3, 4, 0, 10);
+Console.WriteLine(PrintMatrix(matrixNumbers));
 
-double[,] matr = CreateMatrixRndInt(3, 4);
-PrintMatrix(matr);
-Average(matr);
+double[] arithmeticMeanRows = GetArithmeticMeanRows(matrixNumbers);
+Console.WriteLine(PrintArray(arithmeticMeanRows));
