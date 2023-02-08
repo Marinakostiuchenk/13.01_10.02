@@ -25,17 +25,44 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-int MinNumber(int[,] matrix)
+int[] MinIndexElementsMatrix(int[,] matrix)
 {
     int min = matrix[0, 0];
+    int[] arrayIndexMin = new int[2];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i,j] < matrix[0, 0];
-            
+            if (matrix[i,j] < min);
+            {
+                min = matrix[i, j];
+                arrayIndexMin[0] = i;
+                arrayIndexMin[1] = j;
+            }
+
         }
     }
+    return arrayIndexMin;
+}
+
+int[,] MatrixWithoutRowColMinElements(int[,] matrix, int[] minIndex)
+{
+    int[,] matrixWithoutElem = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+    int m = 0, n = 0;
+
+    for (int i = 0; i < matrixWithoutElem.GetLength(0); i++)
+    {
+     if (m == minIndex[0]) m++;  //пропускаем строку с помощью инкремента
+     for (int j = 0; j < matrixWithoutElem.GetLength(1); j++) 
+     {
+        if (n == minIndex[1]) n++; //пропускаем столбец с помощью инкремента
+     matrixWithoutElem[i, j] = matrix[m, n];
+     n++;
+    }
+    n = 0;
+    m++;
+    }
+    return matrixWithoutElem;
 }
 
 void PrintMatrix(int[,] matrix)
@@ -44,10 +71,29 @@ void PrintMatrix(int[,] matrix)
     {
         Console.Write("|"); for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3} | ");
-            else Console.Write($"{matrix[i, j],3} ");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5} | ");
+            else Console.Write($"{matrix[i, j],5} ");
         }
         Console.WriteLine("|");
     }
 }
 
+void PrintArray(int[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
+    }
+    Console.Write("] ");
+}
+
+int[,] arr = CreateMatrixRndInt(4, 4, 0, 10);
+PrintMatrix(arr);
+
+int[] arrayMinIndexElem = MinIndexElementsMatrix(arr);
+PrintArray(arrayMinIndexElem);
+
+int[,] matrixWithout = MatrixWithoutRowColMinElements(arr, arrayMinIndexElem);
+PrintMatrix(matrixWithout);
