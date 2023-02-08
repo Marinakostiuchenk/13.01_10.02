@@ -61,7 +61,7 @@ int[,] ReplaceMatrix(int[,] matrix)
     return replaceMatrix;
 }
 
-// //Второй способ решения:
+// //Второй способ решения: (лучше потому что мы не выделяем ячейку памяти)
 // void ReplaceRowsColumns(int[,] matrix)
 // {
 //     for (int i = 0; i < matrix.GetLength(0) - 1; i++)

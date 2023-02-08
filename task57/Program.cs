@@ -15,36 +15,36 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-int[] ArrayFromMatrix(int[,] matrix)
+int[] MatrixToArray(int[,] matrix)
 {
-    int[] array = new int[matrix.Length];
+    int[] result = new int[matrix.Length]; // matrix.Length - общее количество в двумерном массиве
     int count = 0;
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    int[,] replaceMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            array[i] = matrix[i, j];
-            count++;
+            result[count++] = matrix[i, j];
         }
     }
-    return array;
+    return result;
 }
 
-void Frequency(int[] array)
+void Frequency(int[] arr)
 {
+    int tmp = arr[0];
     int count = 1;
-    int num = array[0];
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 1; i < arr.Length; i++)
     {
-        if (array[i] == num)
-        count++;
-        else
+        if (arr[i] == tmp) count++;
+        else 
         {
-            Console.WriteLine($"{num} встречается {count} раз");
-            num = array[i];
-            count = 1;
+        Console.WriteLine($"{tmp} - {count}");
+        tmp = arr[i];
+        count = 1;
         }
     }
+    Console.WriteLine($"{tmp} - {count}");
 }
 
 void PrintMatrix(int[,] matrix)
@@ -71,9 +71,13 @@ void PrintArray(int[] arr)
     Console.Write("] ");
 }
 
-int[,] matr = CreateMatrixRndInt(4, 4, 0, 100);
+int[,] matr = CreateMatrixRndInt(3, 4, 0, 10);
 PrintMatrix(matr);
 Console.WriteLine();
-int[] arr = ArrayFromMatrix(matr);
-// Array.Sort(arr);
+int[] arr = MatrixToArray(matr);
+
+Array.Sort(arr); // только здесь можно использовать
 PrintArray(arr);
+Console.WriteLine();
+Frequency(arr);
+
