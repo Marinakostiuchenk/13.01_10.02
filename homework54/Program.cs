@@ -36,25 +36,29 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] SortMatrix(int[,] matrix)
-{
-    int[,] replaceMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
-    
-    for (int j = 0; j < matrix.GetLength(0); j++)
+void SortMatrix(int[,] matrix)
+{   
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int i = 0; i < matrix.GetLength(1) - 1; i++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-        int tmp = 0;
-        tmp = matrix[0, j];
-        matrix[0, matrix.GetLength(1) - 1] = matrix[0, j];
-        matrix[0, j] = tmp;
-        }   
+            int tmp1 = j;
+            for (int tmp2 = j + 1; tmp2 < matrix.GetLength(1); tmp2++)
+        {
+            if (matrix[i, tmp1] < matrix[i, tmp2])
+            {
+                tmp1 = tmp2;
+            }
+        } 
+        int tmp3 = matrix[i, j];
+        matrix[i, j] = matrix[i, tmp1];
+        matrix[i, tmp1] = tmp3;
+        }  
     }
-    return replaceMatrix;
 }
 
 int[,] matr = CreateMatrixRndInt(3, 4, 0, 10);
 PrintMatrix(matr);
 Console.WriteLine();
-int[,] sortMatrix = SortMatrix(matr);
-PrintMatrix(sortMatrix);
+SortMatrix(matr);
+PrintMatrix(matr);
