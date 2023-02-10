@@ -37,32 +37,17 @@ void PrintMatrix(int[,] matrix)
 
 int[] MinSumElements(int[,] matrix)
 {
-    
-    int size = matrix[matrix.GetLength(0), matrix.GetLength(1)];
-    int[] arr = new int[size];
+    int[] arr = new int[matrix.GetLength(0)];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+        int sum = 0;
         for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            arr[size] = matrix[i, j];
-        }
-    }
-    return arr[size];
-}
-
-double[] GetArithmeticMeanRows(double[,] matrix)
-{
-    double[] arrayArithmeticMeanRows = new double[matrix.GetLength(1)];
-    for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        double sum = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
         {
             sum += matrix[i, j];
         }
-        arrayArithmeticMeanRows[j] = Math.Round(sum / matrix.GetLength(0), 2);
+        arr[i] = sum;
     }
-    return arrayArithmeticMeanRows;
+    return arr;
 }
 
 string PrintArray(int[] arr) //через СТРОКУ, а она медленнее инта
@@ -75,8 +60,28 @@ string PrintArray(int[] arr) //через СТРОКУ, а она медленн
     return array;
 }
 
+int MinNumber(int[] arr)
+{
+    int minNumber = arr[0];
+    int k = 0;
+    for (int i = 1; i < arr.Length; i++)
+    {
+        if(arr[i] < minNumber)
+        {
+        minNumber = arr[i];
+        k = i;
+        }
+    }
+    return k + 1;
+}
+
+
+
 int[,] matr = CreateMatrixRndInt(3, 4, 0, 10);
 PrintMatrix(matr);
 Console.WriteLine();
-int[] array = MinSumElements(arr);
-PrintArray(array);
+int[] array = MinSumElements(matr);
+Console.WriteLine(PrintArray(array));
+Console.WriteLine();
+int minNumber = MinNumber(array);
+Console.WriteLine(minNumber);

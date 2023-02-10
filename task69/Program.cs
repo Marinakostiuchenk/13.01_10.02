@@ -4,7 +4,7 @@
 
 int SumDigits(int num1, int num2)
 {
-    return num2 == 0 ? 1 : num1 * SumDigits(num1, num2 - 1);
+    return num2 == 0 ? 1 : num1 * SumDigits(num1, num2 - 1);    
 }
 
 Console.WriteLine("Введите число А: ");
