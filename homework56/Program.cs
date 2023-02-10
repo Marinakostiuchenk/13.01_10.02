@@ -84,4 +84,4 @@ int[] array = MinSumElements(matr);
 Console.WriteLine(PrintArray(array));
 Console.WriteLine();
 int minNumber = MinNumber(array);
-Console.WriteLine(minNumber);
+Console.WriteLine($"строка {minNumber}");
