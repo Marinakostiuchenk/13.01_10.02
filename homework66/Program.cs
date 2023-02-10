@@ -16,12 +16,19 @@ if (num1 > num2)
     num2 = num1;
     num1 = tmp;
 }
+else if (num1 == num2)
+{
+    Console.WriteLine("0");
+    return;
+}
 
 int SumDigits(int num1, int num2)
 {
     return num1 > num2 ? 0 : num1 + SumDigits(num1 + 1, num2);
 }
 Console.WriteLine($"{SumDigits(num1, num2)}");
+
+
 
 // int sum = Sum(num1, num2);
 // Console.WriteLine(sum);
