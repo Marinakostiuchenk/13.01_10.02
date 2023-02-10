@@ -13,5 +13,5 @@ void NaturalNumbers(int num)
 {
     if(num == 0) return;
     Console.Write($"{num} ");
-    NaturalNumbers(num - 1);
+    NaturalNumbers(num - 1); // шаг
 }
